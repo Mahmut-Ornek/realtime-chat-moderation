@@ -1,0 +1,33 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  25%|██▍       | 50/201 [00:00<00:00, 431.03it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 973.12it/s]
+  teacher logits computed for 11916 training messages
+Loading weights:   0%|          | 0/71 [00:00<?, ?it/s]Loading weights: 100%|██████████| 71/71 [00:00<00:00, 14207.80it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: google/bert_uncased_L-4_H-512_A-8
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.decoder.bias               | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.decoder.weight             | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  student epoch 1  loss=0.3409  val macro-F1=0.7615
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  6.77it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  6.77it/s]
+  student epoch 2  loss=0.2251  val macro-F1=0.7600
+  student epoch 3  loss=0.1820  val macro-F1=0.7622
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  7.20it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  7.20it/s]
+  student epoch 4  loss=0.1557  val macro-F1=0.7602
+  student epoch 5  loss=0.1401  val macro-F1=0.7603
+  student epoch 6  loss=0.1319  val macro-F1=0.7622
+  -> saved best student (val macro-F1=0.7622) to C:\Users\mahmu\OneDrive\Masaüstü\llm homework\models\student_fp32
+Loading weights:   0%|          | 0/73 [00:00<?, ?it/s]Loading weights: 100%|██████████| 73/73 [00:00<00:00, 1377.02it/s]
+  -> saved INT8 model to C:\Users\mahmu\OneDrive\Masaüstü\llm homework\models\student_int8.pt

@@ -1,0 +1,177 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+=== Rule: edit-distance lexicon
+              precision    recall  f1-score   support
+
+       clean     0.8545    0.6823    0.7587       620
+   offensive     0.4603    0.7000    0.5554       240
+
+    accuracy                         0.6872       860
+   macro avg     0.6574    0.6911    0.6571       860
+weighted avg     0.7445    0.6872    0.7020       860
+
+{
+ "model": "Rule: edit-distance lexicon",
+ "precision": "rules",
+ "macro_f1": 0.6571,
+ "accuracy": 0.6872,
+ "offensive_f1": 0.5554,
+ "size_mb": 0.002,
+ "latency_ms_mean": 7.1,
+ "latency_ms_p95": 19.93,
+ "within_budget": true,
+ "runs": 860
+}
+
+=== Baseline: tf-idf + LogReg
+              precision    recall  f1-score   support
+
+       clean     0.8664    0.8161    0.8405       620
+   offensive     0.5870    0.6750    0.6279       240
+
+    accuracy                         0.7767       860
+   macro avg     0.7267    0.7456    0.7342       860
+weighted avg     0.7884    0.7767    0.7812       860
+
+{
+ "model": "Baseline: tf-idf + LogReg",
+ "precision": "FP64",
+ "macro_f1": 0.7342,
+ "accuracy": 0.7767,
+ "offensive_f1": 0.6279,
+ "size_mb": 3.204,
+ "latency_ms_mean": 2.4,
+ "latency_ms_p95": 3.09,
+ "within_budget": true,
+ "runs": 860
+}
+
+=== NN: own word2vec + FFN
+              precision    recall  f1-score   support
+
+       clean     0.8165    0.7968    0.8065       620
+   offensive     0.5059    0.5375    0.5212       240
+
+    accuracy                         0.7244       860
+   macro avg     0.6612    0.6671    0.6639       860
+weighted avg     0.7298    0.7244    0.7269       860
+
+{
+ "model": "NN: own word2vec + FFN",
+ "precision": "FP32",
+ "macro_f1": 0.6639,
+ "accuracy": 0.7244,
+ "offensive_f1": 0.5212,
+ "size_mb": 3.676,
+ "latency_ms_mean": 0.46,
+ "latency_ms_p95": 0.67,
+ "within_budget": true,
+ "runs": 860
+}
+
+=== Transformer: BERT (FP32)
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  32%|███▏      | 64/201 [00:00<00:00, 474.04it/s]Loading weights:  56%|█████▌    | 112/201 [00:00<00:00, 465.53it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 810.99it/s]
+              precision    recall  f1-score   support
+
+       clean     0.8677    0.9306    0.8981       620
+   offensive     0.7795    0.6333    0.6989       240
+
+    accuracy                         0.8477       860
+   macro avg     0.8236    0.7820    0.7985       860
+weighted avg     0.8431    0.8477    0.8425       860
+
+{
+ "model": "Transformer: BERT (FP32)",
+ "precision": "FP32",
+ "macro_f1": 0.7985,
+ "accuracy": 0.8477,
+ "offensive_f1": 0.6989,
+ "size_mb": 437.959,
+ "latency_ms_mean": 210.8,
+ "latency_ms_p95": 333.84,
+ "within_budget": false,
+ "runs": 860
+}
+
+=== Transformer: BERT (INT8 quantized)
+              precision    recall  f1-score   support
+
+       clean     0.8389    0.9661    0.8981       620
+   offensive     0.8562    0.5208    0.6477       240
+
+    accuracy                         0.8419       860
+   macro avg     0.8475    0.7435    0.7729       860
+weighted avg     0.8437    0.8419    0.8282       860
+
+{
+ "model": "Transformer: BERT (INT8 quantized)",
+ "precision": "INT8 weights",
+ "macro_f1": 0.7729,
+ "accuracy": 0.8419,
+ "offensive_f1": 0.6477,
+ "size_mb": 181.494,
+ "latency_ms_mean": 131.22,
+ "latency_ms_p95": 193.43,
+ "within_budget": false,
+ "runs": 860
+}
+
+=== Distilled: BERT-small (FP32)
+Loading weights:   0%|          | 0/73 [00:00<?, ?it/s]Loading weights: 100%|██████████| 73/73 [00:00<00:00, 1379.17it/s]
+              precision    recall  f1-score   support
+
+       clean     0.8835    0.9048    0.8940       620
+   offensive     0.7378    0.6917    0.7140       240
+
+    accuracy                         0.8453       860
+   macro avg     0.8106    0.7983    0.8040       860
+weighted avg     0.8428    0.8453    0.8438       860
+
+{
+ "model": "Distilled: BERT-small (FP32)",
+ "precision": "FP32",
+ "macro_f1": 0.804,
+ "accuracy": 0.8453,
+ "offensive_f1": 0.714,
+ "size_mb": 115.067,
+ "latency_ms_mean": 37.56,
+ "latency_ms_p95": 57.88,
+ "within_budget": true,
+ "runs": 860
+}
+
+=== Distilled: BERT-small (INT8 quantized)
+              precision    recall  f1-score   support
+
+       clean     0.8850    0.9065    0.8956       620
+   offensive     0.7422    0.6958    0.7183       240
+
+    accuracy                         0.8477       860
+   macro avg     0.8136    0.8011    0.8069       860
+weighted avg     0.8452    0.8477    0.8461       860
+
+{
+ "model": "Distilled: BERT-small (INT8 quantized)",
+ "precision": "INT8 weights",
+ "macro_f1": 0.8069,
+ "accuracy": 0.8477,
+ "offensive_f1": 0.7183,
+ "size_mb": 76.569,
+ "latency_ms_mean": 30.33,
+ "latency_ms_p95": 43.55,
+ "within_budget": true,
+ "runs": 860
+}
+
+Test set: OffensEval-2019 test split, 860 tweets (240 offensive). 
+Latency: mean over 860 single-message runs on AMD Ryzen 7 5800H with Radeon Graphics, PyTorch 2.9.1+cu130, 1 CPU thread(s), batch size 1. Budget: 50 ms/message.
+
+| Model | Precision | Macro-F1 | Accuracy | Size (MB) | Latency mean (ms) | Latency p95 (ms) | Within budget |
+|---|---|---|---|---|---|---|---|
+| Rule: edit-distance lexicon | rules | 0.6571 | 0.6872 | 0.002 | 7.10 | 19.93 | yes |
+| Baseline: tf-idf + LogReg | FP64 | 0.7342 | 0.7767 | 3.204 | 2.40 | 3.09 | yes |
+| NN: own word2vec + FFN | FP32 | 0.6639 | 0.7244 | 3.676 | 0.46 | 0.67 | yes |
+| Transformer: BERT (FP32) | FP32 | 0.7985 | 0.8477 | 437.959 | 210.80 | 333.84 | no |
+| Transformer: BERT (INT8 quantized) | INT8 weights | 0.7729 | 0.8419 | 181.494 | 131.22 | 193.43 | no |
+| Distilled: BERT-small (FP32) | FP32 | 0.8040 | 0.8453 | 115.067 | 37.56 | 57.88 | yes |
+| Distilled: BERT-small (INT8 quantized) | INT8 weights | 0.8069 | 0.8477 | 76.569 | 30.33 | 43.55 | yes |

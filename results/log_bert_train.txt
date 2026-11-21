@@ -1,0 +1,25 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:   3%|▎         | 6/199 [00:00<00:03, 49.59it/s]Loading weights:   6%|▌         | 12/199 [00:00<00:03, 49.54it/s]Loading weights:   9%|▉         | 18/199 [00:00<00:03, 46.22it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 483.74it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.bias                       | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+  BERT epoch 1  train loss=0.5024  val macro-F1=0.7812
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.84it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00,  1.84it/s]
+  BERT epoch 2  train loss=0.3669  val macro-F1=0.7744
+  BERT epoch 3  train loss=0.2779  val macro-F1=0.7716
+  -> saved best epoch (val macro-F1=0.7812) to C:\Users\mahmu\OneDrive\Masaüstü\llm homework\models\bert_fp32
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   6%|▋         | 13/201 [00:00<00:01, 114.17it/s]Loading weights:  12%|█▏        | 25/201 [00:00<00:02, 79.23it/s] Loading weights: 100%|██████████| 201/201 [00:00<00:00, 502.47it/s]
+  -> saved INT8 model to C:\Users\mahmu\OneDrive\Masaüstü\llm homework\models\bert_int8.pt

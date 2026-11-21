@@ -1,0 +1,90 @@
+{
+ "hardware": "AMD Ryzen 7 5800H with Radeon Graphics, PyTorch 2.9.1+cu130, 1 CPU thread(s), batch size 1",
+ "budget_ms": 50.0,
+ "rows": [
+  {
+   "model": "Rule: edit-distance lexicon",
+   "precision": "rules",
+   "macro_f1": 0.6571,
+   "accuracy": 0.6872,
+   "offensive_f1": 0.5554,
+   "size_mb": 0.002,
+   "latency_ms_mean": 7.1,
+   "latency_ms_p95": 19.93,
+   "within_budget": true,
+   "runs": 860
+  },
+  {
+   "model": "Baseline: tf-idf + LogReg",
+   "precision": "FP64",
+   "macro_f1": 0.7342,
+   "accuracy": 0.7767,
+   "offensive_f1": 0.6279,
+   "size_mb": 3.204,
+   "latency_ms_mean": 2.4,
+   "latency_ms_p95": 3.09,
+   "within_budget": true,
+   "runs": 860
+  },
+  {
+   "model": "NN: own word2vec + FFN",
+   "precision": "FP32",
+   "macro_f1": 0.6639,
+   "accuracy": 0.7244,
+   "offensive_f1": 0.5212,
+   "size_mb": 3.676,
+   "latency_ms_mean": 0.46,
+   "latency_ms_p95": 0.67,
+   "within_budget": true,
+   "runs": 860
+  },
+  {
+   "model": "Transformer: BERT (FP32)",
+   "precision": "FP32",
+   "macro_f1": 0.7985,
+   "accuracy": 0.8477,
+   "offensive_f1": 0.6989,
+   "size_mb": 437.959,
+   "latency_ms_mean": 210.8,
+   "latency_ms_p95": 333.84,
+   "within_budget": false,
+   "runs": 860
+  },
+  {
+   "model": "Transformer: BERT (INT8 quantized)",
+   "precision": "INT8 weights",
+   "macro_f1": 0.7729,
+   "accuracy": 0.8419,
+   "offensive_f1": 0.6477,
+   "size_mb": 181.494,
+   "latency_ms_mean": 131.22,
+   "latency_ms_p95": 193.43,
+   "within_budget": false,
+   "runs": 860
+  },
+  {
+   "model": "Distilled: BERT-small (FP32)",
+   "precision": "FP32",
+   "macro_f1": 0.804,
+   "accuracy": 0.8453,
+   "offensive_f1": 0.714,
+   "size_mb": 115.067,
+   "latency_ms_mean": 37.56,
+   "latency_ms_p95": 57.88,
+   "within_budget": true,
+   "runs": 860
+  },
+  {
+   "model": "Distilled: BERT-small (INT8 quantized)",
+   "precision": "INT8 weights",
+   "macro_f1": 0.8069,
+   "accuracy": 0.8477,
+   "offensive_f1": 0.7183,
+   "size_mb": 76.569,
+   "latency_ms_mean": 30.33,
+   "latency_ms_p95": 43.55,
+   "within_budget": true,
+   "runs": 860
+  }
+ ]
+}

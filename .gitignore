@@ -1,0 +1,8 @@
+# model weights live on the Hugging Face Hub, not in Git
+models/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.gradio/
+*.docx
