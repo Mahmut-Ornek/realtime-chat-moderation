@@ -4,7 +4,7 @@
 Run:  python -m src.download                 (uses HF_MODEL_REPO from src/config.py)
       python -m src.download --repo user/name
 Publish your own weights once (after `hf auth login`):
-      hf upload <user>/chat-moderation-models models . --repo-type model
+      hf upload <user>/realtime-chat-moderation-models models . --repo-type model
 """
 import argparse
 

@@ -16,8 +16,9 @@ pip install -r requirements.txt
 python app.py                                            # opens http://127.0.0.1:7860
 ```
 
-On the first run, `app.py` downloads the trained weights from the Hugging Face Hub
-(`HF_MODEL_REPO` in [src/config.py](src/config.py)). Weights are not stored in this repository.
+On the first run, `app.py` downloads the trained weights (about 780 MB) from the Hugging Face Hub:
+[mahmut-ornek/realtime-chat-moderation-models](https://huggingface.co/mahmut-ornek/realtime-chat-moderation-models).
+Weights are not stored in this repository.
 
 To **reproduce everything from scratch** (about 10–15 min on a GPU):
 

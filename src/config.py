@@ -33,4 +33,4 @@ MAX_LEN = 128
 SEED = 42
 
 # Hugging Face Hub repo that holds the trained weights (fill in after uploading; see src/download.py)
-HF_MODEL_REPO = "<your-hf-username>/chat-moderation-models"
+HF_MODEL_REPO = "mahmut-ornek/realtime-chat-moderation-models"
